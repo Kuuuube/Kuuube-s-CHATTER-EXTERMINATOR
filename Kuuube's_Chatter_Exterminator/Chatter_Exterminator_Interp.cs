@@ -20,6 +20,8 @@ namespace TabletDriverFilters.Chatter_Exterminator
         private SyntheticTabletReport report;
         private const float threshold = 0.9f;
         private float _AntichatterOffsetY = 15;
+        private float _Xoffset = 1.96f;
+        private float _FuncStretch = 1.7f;
 
         public override void UpdateState(SyntheticTabletReport report)
         {
@@ -50,7 +52,7 @@ namespace TabletDriverFilters.Chatter_Exterminator
             float target = 1 - threshold;
             float weight = (float)(1.0 - (1.0 / Pow((float)(1.0 / target), (float)1 / 1000)));
 
-            var weightModifier = (float)Pow(((distance * -1 + (AntichatterStrength - 100)) / 100), 999) + _AntichatterOffsetY;
+            var weightModifier = (float)Pow(((distance * -1 + (AntichatterStrength - _FuncStretch)) / _Xoffset), 19) + _AntichatterOffsetY;
 
             // Limit minimum
             if (weightModifier + _AntichatterOffsetY < 0)
