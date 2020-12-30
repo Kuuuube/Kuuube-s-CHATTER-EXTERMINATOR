@@ -7,5 +7,3 @@ Simply enable the filter or interpolator and input a number 1-10 (and 1000 for h
 Recommended settings: 2-3 for drag and 5 for hover.
 
 The filter version is slightly lower latency (0ms vs 1ms) compared to the interpolator version. However, the interpolator will remove any choppiness caused by moving at slow speeds.
-
-Download the latest version [Here](https://github.com/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR/releases)
