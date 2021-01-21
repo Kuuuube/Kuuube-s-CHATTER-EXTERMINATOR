@@ -5,7 +5,7 @@ using OpenTabletDriver.Plugin.Tablet;
 using OpenTabletDriver.Plugin.Tablet.Interpolator;
 using OpenTabletDriver.Plugin.Timers;
 
-namespace TabletDriverFilters.Chatter_Exterminator
+namespace Chatter_Exterminator
 {
     using static MathF;
 

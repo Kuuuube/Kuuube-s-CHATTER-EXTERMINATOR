@@ -3,7 +3,7 @@ using System.Numerics;
 using OpenTabletDriver.Plugin.Attributes;
 using OpenTabletDriver.Plugin.Tablet;
 
-namespace TabletDriverFilters.Chatter_Exterminator
+namespace Chatter_Exterminator
 {
     using static MathF;
 
