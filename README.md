@@ -1,9 +1,16 @@
-# Kuuube's **CHATTER EXTERMINATOR**
+# Kuuube's **CHATTER EXTERMINATOR** Plugin for [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver)
 
 Extremely simple to use with perfect low latency **CHATTER EXTERMINATION**
 
-Simply enable the filter or interpolator and input a number 1-10 (and 1000 for hertz if using the interpolator) then apply the settings.
+## Quick Start Guide:
+- Enable either the filter or the interpolator.
+- Input a number 1-20 (and 1000 for hertz if using the interpolator).
+- Apply the settings.
 
-Recommended settings: 2-3 for drag and 5 for hover.
+### Tips:
+- Recommended settings for filter: 2-3 for drag and 5-6 for hover.
+- Recommended settings for interpolator: 6-7 for drag and 15-16 for hover.
 
-The filter version is slightly lower latency (0ms vs 1ms) compared to the interpolator version. However, the interpolator will remove any choppiness caused by moving at slow speeds.
+### Notes:
+- The filter version has no added latency.
+- The interpolator version has a slight bit of latency added to make it smoother. Using the interpolator version instead of the filter version should help if you have issues with choppy movement on the filter version.
