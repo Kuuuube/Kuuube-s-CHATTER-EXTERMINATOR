@@ -69,7 +69,11 @@ namespace Chatter_Exterminator
 
         public static FilterStage FilterStage => FilterStage.PostTranspose;
 
-        [Property("Chatter Extermination Strength")]
+        [Property("Chatter Extermination Strength"), DefaultPropertyValue(6f), ToolTip
+            ("Kuuube's CHATTER EXTERMINATOR:\n\n" +
+            "Accepted settings are 1-20 (and 1000hz).\n" +
+            "Recommended settings for the interpolator version: 6-7 for drag and 15-16 for hover.\n\n" +
+            "For more information: Open the wiki from plugin manager or go to https://github.com/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR.")]
         public float AntichatterStrength { set; get; } = 3;
     }
 }
