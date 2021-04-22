@@ -2,13 +2,14 @@ using System;
 using System.Numerics;
 using OpenTabletDriver.Plugin.Attributes;
 using OpenTabletDriver.Plugin.Tablet;
+using OpenTabletDriver.Plugin.Output;
 
 namespace Chatter_Exterminator
 {
     using static MathF;
 
     [PluginName("Kuuube's CHATTER EXTERMINATOR")]
-    public class Chatter_Exterminator_Filter : IFilter
+    public class Chatter_Exterminator_Filter : IPositionedPipelineElement<IDeviceReport>
     {
         private Vector2 _lastPos;
         private const float _threshold = 0.9f;
@@ -47,7 +48,20 @@ namespace Chatter_Exterminator
             return _lastPos;
         }
 
-        public FilterStage FilterStage => FilterStage.PostTranspose;
+        public event Action<IDeviceReport> Emit;
+
+        public void Consume(IDeviceReport value)
+        {
+            if (value is ITabletReport report)
+            {
+                report.Position = Filter(report.Position);
+                value = report;
+            }
+
+            Emit?.Invoke(value);
+        }
+
+        public PipelinePosition Position => PipelinePosition.PostTransform;
 
         [Property("Chatter Extermination Strength"), DefaultPropertyValue(2f), ToolTip
             ("Kuuube's CHATTER EXTERMINATOR:\n\n" +
