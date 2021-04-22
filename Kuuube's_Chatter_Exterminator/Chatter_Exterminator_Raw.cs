@@ -8,7 +8,7 @@ namespace Chatter_Exterminator
 {
     using static MathF;
 
-    [PluginName("Kuuube's CHATTER EXTERMINATOR")]
+    [PluginName("Kuuube's CHATTER EXTERMINATOR RAW")]
     public class Chatter_Exterminator_Filter : IPositionedPipelineElement<IDeviceReport>
     {
         private Vector2 _lastPos;
@@ -66,7 +66,7 @@ namespace Chatter_Exterminator
         [Property("Chatter Extermination Strength"), DefaultPropertyValue(2f), ToolTip
             ("Kuuube's CHATTER EXTERMINATOR:\n\n" +
             "Accepted settings are 1-20.\n" +
-            "Recommended settings for the filter version: 2-3 for drag and 5-6 for hover.\n\n" +
+            "Recommended settings for the raw version: 2-3 for drag and 5-6 for hover.\n\n" +
             "For more information: Open the wiki from plugin manager or go to https://github.com/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR.")]
         public float AntichatterStrength { set; get; } = 3;
     }
