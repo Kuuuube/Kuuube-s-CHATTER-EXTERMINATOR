@@ -40,7 +40,7 @@ namespace Chatter_Exterminator
                 State = report;
             }
 
-            if (PenIsInRange())
+            if (PenIsInRange() || State is not ITabletReport)
             {
                 OnEmit();
             }
