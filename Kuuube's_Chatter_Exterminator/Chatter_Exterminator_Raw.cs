@@ -64,9 +64,9 @@ namespace Chatter_Exterminator
         public PipelinePosition Position => PipelinePosition.PostTransform;
 
         [Property("Chatter Extermination Strength"), DefaultPropertyValue(2f), ToolTip
-            ("Kuuube's CHATTER EXTERMINATOR:\n\n" +
+            ("Kuuube's CHATTER EXTERMINATOR RAW:\n\n" +
             "Accepted settings are 1-20.\n" +
-            "Recommended settings for the raw version: 2-3 for drag and 5-6 for hover.\n\n" +
+            "Recommended settings for Kuuube's CHATTER EXTERMINATOR RAW: 2-3 for drag and 5-6 for hover.\n\n" +
             "For more information: Open the wiki from plugin manager or go to https://github.com/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR.")]
         public float AntichatterStrength { set; get; } = 3;
     }
