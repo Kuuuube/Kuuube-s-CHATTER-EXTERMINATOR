@@ -4,22 +4,22 @@ using OpenTabletDriver.Plugin.Attributes;
 using OpenTabletDriver.Plugin.Tablet;
 using OpenTabletDriver.Plugin.Output;
 
-namespace Chatter_Exterminator
+namespace Kuuube_s_Chatter_Exterminator
 {
     using static MathF;
 
     [PluginName("Kuuube's CHATTER EXTERMINATOR SMOOTH")]
-    public class AntiChatter : AsyncPositionedPipelineElement<IDeviceReport>
+    public class Kuuube_s_CHATTER_EXTERMINATOR_SMOOTH : AsyncPositionedPipelineElement<IDeviceReport>
     {
-        public AntiChatter() {  }
+        public Kuuube_s_CHATTER_EXTERMINATOR_SMOOTH() {  }
 
         private bool isReady;
         private Vector2 position;
         private Vector2 targetPos, calcTarget;
-        private const float threshold = 0.9f;
-        private float _AntichatterOffsetY = 15;
-        private float _Xoffset = 1.96f;
-        private float _FuncStretch = 1.7f;
+        private readonly float threshold = 0.9f;
+        private readonly float _AntichatterOffsetY = 15;
+        private readonly float _Xoffset = 1.96f;
+        private readonly float _FuncStretch = 1.7f;
 
         protected override void ConsumeState()
         {
@@ -61,7 +61,7 @@ namespace Chatter_Exterminator
                 float target = 1 - threshold;
                 float weight = (float)(1.0 - (1.0 / Pow((float)(1.0 / target), (float)1 / 1000)));
 
-                var weightModifier = (float)Pow(((distance * -1 + (AntichatterStrength - _FuncStretch)) / _Xoffset), 19) + _AntichatterOffsetY;
+                var weightModifier = (float)Pow(((distance * -1 + (Chatter_Extermination_Strength - _FuncStretch)) / _Xoffset), 19) + _AntichatterOffsetY;
 
                 // Limit minimum
                 if (weightModifier + _AntichatterOffsetY < 0)
@@ -83,6 +83,6 @@ namespace Chatter_Exterminator
             "Accepted settings are 1-20 (and 1000hz).\n" +
             "Recommended settings for Kuuube's CHATTER EXTERMINATOR SMOOTH: 6-7 for drag and 15-16 for hover.\n\n" +
             "For more information: Open the wiki from plugin manager or go to https://github.com/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR.")]
-        public float AntichatterStrength { set; get; } = 3;
+        public float Chatter_Extermination_Strength { set; get; } = 3;
     }
 }
