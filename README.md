@@ -1,4 +1,4 @@
-# Kuuube's **CHATTER EXTERMINATOR** Plugin for [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver) [![Total Download Count](https://img.shields.io/github/downloads/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR/total.svg)](https://github.com/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR/releases/latest)
+# Kuuube's **CHATTER EXTERMINATOR** Plugin for [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver) [![](https://img.shields.io/github/downloads/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR/total.svg)](https://github.com/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR/releases/latest)
 
 Extremely simple to use with perfect low latency **CHATTER EXTERMINATION**.
 
