@@ -16,6 +16,7 @@ namespace Kuuube_s_Chatter_Exterminator
         private readonly float _OffsetY = 15;
         private readonly float _Xoffset = 1.96f;
         private readonly float _FuncStretch = 1.7f;
+
         public Vector2 Filter(Vector2 point)
         {
             Vector2 calcTarget = new Vector2();

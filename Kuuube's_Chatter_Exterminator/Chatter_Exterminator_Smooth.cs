@@ -21,31 +21,6 @@ namespace Kuuube_s_Chatter_Exterminator
         private readonly float _Xoffset = 1.96f;
         private readonly float _FuncStretch = 1.7f;
 
-        protected override void ConsumeState()
-        {
-            if (State is ITabletReport report)
-            {
-                this.targetPos = report.Position;
-                calcTarget = targetPos;
-            }
-            else
-                calcTarget = targetPos;
-        }
-
-        protected override void UpdateState()
-        {
-            if (State is ITabletReport report)
-            {
-                report.Position = Filter(calcTarget);
-                State = report;
-            }
-
-            if (PenIsInRange() || State is not ITabletReport)
-            {
-                OnEmit();
-            }
-        }
-
         public Vector2 Filter(Vector2 calcTarget)
         {
                 if (!this.isReady)
@@ -76,6 +51,31 @@ namespace Kuuube_s_Chatter_Exterminator
                 return this.position;
             }
 
+        protected override void ConsumeState()
+        {
+            if (State is ITabletReport report)
+            {
+                this.targetPos = report.Position;
+                calcTarget = targetPos;
+            }
+            else
+                calcTarget = targetPos;
+        }
+
+        protected override void UpdateState()
+        {
+            if (State is ITabletReport report)
+            {
+                report.Position = Filter(calcTarget);
+                State = report;
+            }
+
+            if (PenIsInRange() || State is not ITabletReport)
+            {
+                OnEmit();
+            }
+        }
+        
         public override PipelinePosition Position => PipelinePosition.PreTransform;
 
         [Property("Chatter Extermination Strength"), DefaultPropertyValue(6f), ToolTip
