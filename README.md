@@ -1,6 +1,6 @@
 # Kuuube's **CHATTER EXTERMINATOR** Plugin for [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver) [![](https://img.shields.io/github/downloads/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR/total.svg)](https://github.com/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR/releases/latest)
 
-Extremely simple to use with perfect low latency **CHATTER EXTERMINATION**.
+Extremely simple to use anti-chatter with perfect low latency **CHATTER EXTERMINATION**.
 
 ## Quick Start Guide:
 - Enable either the filter version or the interpolator version.
