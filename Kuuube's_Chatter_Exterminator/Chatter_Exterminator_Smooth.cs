@@ -20,6 +20,7 @@ namespace Kuuube_s_Chatter_Exterminator
         private readonly float _AntichatterOffsetY = 15;
         private readonly float _Xoffset = 1.96f;
         private readonly float _FuncStretch = 1.7f;
+        private uint pressure;
 
         public Vector2 Filter(Vector2 calcTarget)
         {
@@ -56,6 +57,7 @@ namespace Kuuube_s_Chatter_Exterminator
             if (State is ITabletReport report)
             {
                 this.targetPos = report.Position;
+                this.pressure = report.Pressure;
                 calcTarget = targetPos;
             }
             else
@@ -67,6 +69,7 @@ namespace Kuuube_s_Chatter_Exterminator
             if (State is ITabletReport report)
             {
                 report.Position = Filter(calcTarget);
+                report.Pressure = this.pressure;
                 State = report;
             }
 
