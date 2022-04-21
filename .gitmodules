@@ -1,6 +1,3 @@
-[submodule "OpenTabletDriver"]
-	path = OpenTabletDriver
-	url = https://github.com/InfinityGhost/OpenTabletDriver
 [submodule ".modules/OpenTabletDriver"]
 	path = .modules/OpenTabletDriver
-	url = https://github.com/InfinityGhost/OpenTabletDriver
+	url = https://github.com/OpenTabletDriver/OpenTabletDriver
