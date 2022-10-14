@@ -6,7 +6,7 @@ Extremely simple to use anti-chatter with perfect low latency **CHATTER EXTERMIN
 
 Provides the lowest latency at the cost of input choppiness in some cases.
 
-**Chatter Extermination Strength:** Recommended settings are 2-3 for dragging and 5–6 for hovering. However, any value above zero is accepted.
+**Chatter Extermination Strength:** Recommended settings are 2-3 for dragging and 5-6 for hovering. However, any value above zero is accepted.
 
 ## **Kuuube's CHATTER EXTERMINATOR SMOOTH:**
 

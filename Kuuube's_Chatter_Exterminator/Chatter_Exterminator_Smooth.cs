@@ -83,9 +83,9 @@ namespace Kuuube_s_Chatter_Exterminator
 
         [Property("Chatter Extermination Strength"), DefaultPropertyValue(6f), ToolTip
             ("Kuuube's CHATTER EXTERMINATOR SMOOTH:\n\n" +
-            "Accepted settings are 1-20 (and 1000hz).\n" +
-            "Recommended settings for Kuuube's CHATTER EXTERMINATOR SMOOTH: 6-7 for drag and 15-16 for hover.\n\n" +
-            "For more information: Open the wiki from plugin manager or go to https://github.com/Kuuuube/Kuuube-s-CHATTER-EXTERMINATOR.")]
+            "Recommended settings are 6-7 for dragging and 15-16 for hovering.\n" +
+            "However, any value above zero is accepted.\n" +
+            "Frequency is unused and only present due to restrictions on OTD's plugin system.")]
         public float Chatter_Extermination_Strength { set; get; } = 3;
     }
 }
