@@ -6,47 +6,35 @@ using OpenTabletDriver.Plugin.Output;
 
 namespace Kuuube_s_Chatter_Exterminator
 {
-    using static MathF;
-
     [PluginName("Kuuube's CHATTER EXTERMINATOR RAW")]
     public class Kuuube_s_CHATTER_EXTERMINATOR_RAW : IPositionedPipelineElement<IDeviceReport>
     {
-        private Vector2 _lastPos;
-        private readonly float _threshold = 0.9f;
-        private readonly float _OffsetY = 15;
-        private readonly float _Xoffset = 1.96f;
-        private readonly float _FuncStretch = 1.7f;
+        private Vector2 LastPos;
+        private readonly float weight = 0.9f;
+        private readonly float Y_Offset = 15;
+        private readonly float Stretch = 1.96f;
+        private readonly float X_Offset = 1.7f;
 
-        public Vector2 Filter(Vector2 point)
+        public Vector2 Filter(Vector2 input)
         {
-            Vector2 calcTarget = new Vector2();
-            float deltaX, deltaY, distance, weightModifier;
+            Vector2 Delta = new Vector2();
             {
-                calcTarget.X = point.X;
-                calcTarget.Y = point.Y;
+                Delta.X = input.X - LastPos.X;
+                Delta.Y = input.Y - LastPos.Y;
             }
 
-            deltaX = calcTarget.X - _lastPos.X;
-            deltaY = calcTarget.Y - _lastPos.Y;
-            distance = Sqrt(deltaX * deltaX + deltaY * deltaY);
+            float distance = (float)MathF.Sqrt(MathF.Pow(Delta.X, 2) + MathF.Pow(Delta.Y, 2));
 
-            float target = 1 - _threshold;
-            float weight = (float)(1.0 - (1.0 / (float)(1.0 / target)));
+            float function = MathF.Pow(((distance * -1 + (Chatter_Extermination_Strength - X_Offset)) / Stretch), 19) + Y_Offset;
 
-            weightModifier = (float)Pow(((distance * -1 + (Chatter_Extermination_Strength - _FuncStretch)) / _Xoffset), 19) + _OffsetY;
+            float weightModifier = Math.Clamp(function + Y_Offset, 0, float.MaxValue);
 
-            // Limit minimum
-            if (weightModifier + _OffsetY < 0)
-                weightModifier = 0;
-            else
-                weightModifier += _OffsetY;
+            weightModifier = Math.Clamp(weight / weightModifier, 0, 1);
+            
+            LastPos.X += (Delta.X * weightModifier);
+            LastPos.Y += (Delta.Y * weightModifier);
 
-            weightModifier = weight / weightModifier;
-            weightModifier = Math.Clamp(weightModifier, 0, 1);
-            _lastPos.X += (float)(deltaX * weightModifier);
-            _lastPos.Y += (float)(deltaY * weightModifier);
-
-            return _lastPos;
+            return LastPos;
         }
 
         public event Action<IDeviceReport> Emit;
@@ -61,13 +49,13 @@ namespace Kuuube_s_Chatter_Exterminator
 
             Emit?.Invoke(value);
         }
-
+        
         public PipelinePosition Position => PipelinePosition.PostTransform;
 
         [Property("Chatter Extermination Strength"), DefaultPropertyValue(2f), ToolTip
             ("Kuuube's CHATTER EXTERMINATOR RAW:\n\n" +
             "Recommended settings are 2-3 for dragging and 5-6 for hovering.\n" +
             "However, any value above zero is accepted.")]
-        public float Chatter_Extermination_Strength { set; get; } = 3;
+        public float Chatter_Extermination_Strength { set; get; }
     }
 }
