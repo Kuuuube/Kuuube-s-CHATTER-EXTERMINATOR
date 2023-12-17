@@ -4,12 +4,12 @@ Extremely simple to use anti-chatter with perfect low latency **CHATTER EXTERMIN
 
 ## **Kuuube's CHATTER EXTERMINATOR RAW:**
 
-Can lead to uneven input in some cases due to the use of screen coordinates.
+Basic low latency anti-chatter performed on screen coordinates.
 
 **Chatter Extermination Strength:** Recommended settings are 2-3 for dragging and 5-6 for hovering. However, any value above zero is accepted.
 
 ## **Kuuube's CHATTER EXTERMINATOR SMOOTH:**
 
-Can help to fix uneven input due to the use of tablet coordinates.
+Basic low latency anti-chatter performed on tablet coordinates. Can help to fix uneven input due to mismatched monitor and tablet aspect ratios.
 
 **Chatter Extermination Strength:** Recommended settings are 6-7 for dragging and 15-16 for hovering. However, any value above zero is accepted.
