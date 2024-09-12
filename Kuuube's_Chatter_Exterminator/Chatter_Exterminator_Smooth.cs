@@ -38,7 +38,7 @@ public class Kuuube_s_CHATTER_EXTERMINATOR_SMOOTH : IPositionedPipelineElement<I
     public event Action<IDeviceReport> Emit;
 
     public void Consume(IDeviceReport value) {
-        if (value is ITabletReport report) {
+        if (value is IAbsolutePositionReport report) {
             report.Position = Filter(report.Position);
             value = report;
         }
